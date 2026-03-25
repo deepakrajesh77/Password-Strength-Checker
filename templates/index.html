@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Predictor</title>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: black;
+            color: white;
+        }
+
+        /* HEADER */
+        header {
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid gray;
+            
+            border: 2px solid #55fe4f;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(79, 254, 88, 0.7);
+
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        header p {
+            color: gray;
+            margin-top: 10px;
+        }
+
+        /* MAIN SECTION */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 30px;
+            font-size: large;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            border-left: 5px solid #16e603;
+            padding-left: 10px;
+        }
+
+        /* INPUT BOX */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            border-color: blue;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            border: none;
+            background: #4ffe55;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #00ff22;
+        }
+
+        .result {
+           
+
+         
+    display: block;
+    margin: 20px auto;
+    padding: 15px;
+    width: 100%;            
+    max-width: 520px;         
+    box-sizing: border-box;   
+    
+    background: #111;
+    border: 2px solid #55fe4f;
+    border-radius: 12px;
+
+    color: #00ff0d;
+    font-size: 18px;
+    text-align: center;
+
+    box-shadow: 0 0 15px rgba(79, 254, 82, 0.7);
+}
+     
+    </style>
+
+    </head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>PASSWORD STRENGTH CHECKER</h1>
+    <p>Your Password Checker</p>
+</header>
+
+<div class="container">
+
+    <!-- ABOUT SECTION -->
+    <div class="section">
+        <h2>About Password Strength</h2>
+        <p>
+            A strong password is essential for protecting your accounts and personal information.
+            It should be unique, complex, and difficult to guess.
+             A strong password typically includes a combination of uppercase and lowercase letters, numbers, and special characters.
+             Avoid using common words, phrases, or easily guessable information such as your name or birthdate.
+             Regularly updating your passwords and using a password manager can also enhance your security.
+        </p>
+    </div>
+<!-- CONSEQUENCES -->
+    <div class="section">
+        <h2>Consequences of Weak Passwords</h2>
+        <p>
+            Weak passwords can lead to unauthorized access to your accounts, identity theft, and financial loss.
+            They may result in data breaches and compromise your personal information.
+            Using strong, unique passwords for each account is essential for maintaining online security.
+        </p>
+    </div>
+ <!-- PREDICTION -->
+<div class="result" style="text-align:center;">
+    <h2>Check Your Password Strength</h2>
+
+    <form  method="post">
+       
+
+        
+
+        <!-- Main input -->
+        <input type="text" name="password"
+        placeholder="Enter your password "
+        style="width:250px;">
+
+        <br>
+
+        <button type="submit">CHECK STRENGTH</button>
+    </form>
+
+ {% if prediction %}
+<div class="result-box">
+    <h3>Password Strength</h3>
+    <p>{{ prediction }}</p>
+</div>
+
+<div class="result-box">
+    <h3>Description</h3>
+    <p>{{ description }}</p>
+</div>
+
+<div class="result-box">
+    <h3>Breach Status</h3>
+    <p>{{ breach }}</p>
+</div>
+{% endif %}
+</div>
+
+<!--how to set-->
+    <div class="section">
+        <h2>How to Create a Strong Password</h2>
+        <ul>
+            <li>Use a mix of uppercase and lowercase letters, numbers, and special characters.</li>
+            <li>Avoid using common words or easily guessable information.</li>
+            <li>Make your password at least 12 characters long.</li>
+            <li>Use a passphrase or a combination of unrelated words for added security.</li>
+            <li>Consider using a password manager to generate and store strong passwords.</li>
+                      
+        </ul>
+    </div>
