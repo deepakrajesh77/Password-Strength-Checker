@@ -28,7 +28,7 @@ def check_password_strength(password):
 
     if entropy < 2:
         return "Weak"
-    elif entropy < 4:
+    elif entropy < 4 and score >= 3:
         return "Medium"
     else:
         return "Strong"
